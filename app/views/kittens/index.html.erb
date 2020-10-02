@@ -1,4 +1,5 @@
-<h1>Kittens</h1>
+<h1>Our Kittens</h1>
+<h4><%=link_to "Add A New Kitten", new_kitten_path%></h4>
 <p><%@kittens.each do |kitten|%></p>
   <ul><%= link_to kitten.name, kitten_path(kitten)%></ul>
 <%end%>
