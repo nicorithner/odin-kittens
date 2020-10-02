@@ -1,5 +1,9 @@
 <h1>Our Kittens</h1>
 <h4><%=link_to "Add A New Kitten", new_kitten_path%></h4>
 <p><%@kittens.each do |kitten|%></p>
-  <ul><%= link_to kitten.name, kitten_path(kitten)%> | <%= link_to "Edit", edit_kitten_path(kitten)%></ul>
+  <ul><h3><%= link_to kitten.name, kitten_path(kitten)%></h3>
+    <ul>
+      <%= link_to "Edit", edit_kitten_path(kitten)%> | <%= link_to "Delete", kitten_path(kitten), method: :delete%>
+    </ul>
+  </ul>
 <%end%>
