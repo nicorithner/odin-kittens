@@ -39,4 +39,10 @@ class KittensController < ApplicationController
       render :new
     end
   end
+
+  def destroy
+    @kitten = Kitten.find(params[:id]).destroy
+    flash[:success] = "#{@kitten.name}'s record successfully deleted!"
+    redirect_to root_path
+  end
 end
