@@ -19,7 +19,7 @@ class KittensController < ApplicationController
       flash[:sucess] = "#{@kitten.name} added successfully!"
       redirect_to kitten_path(@kitten)
     else
-      flash[:error] = kitten.errors.full_messages.to_sentence
+      flash[:error] = @kitten.errors.full_messages.to_sentence
       render :new
     end
   end
